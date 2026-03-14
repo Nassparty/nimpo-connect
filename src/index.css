@@ -1,96 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* NimPo Design System — Minimal, Dense, Geometric */
 
 @layer base {
   :root {
+    /* Core surfaces */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 7%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand — Indigo */
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 7%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 91%;
+    --input: 0 0% 94%;
+    --ring: 243 75% 59%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* NimPo custom tokens */
+    --nimpo-brand: 243 75% 59%;
+    --nimpo-brand-light: 243 75% 94%;
+    --nimpo-surface: 0 0% 100%;
+    --nimpo-surface-2: 0 0% 98%;
+    --nimpo-surface-3: 0 0% 96%;
+    --nimpo-ink: 0 0% 7%;
+    --nimpo-ink-2: 0 0% 30%;
+    --nimpo-ink-3: 0 0% 55%;
+    --nimpo-separator: 0 0% 91%;
+    --nimpo-red: 0 84% 60%;
+    --nimpo-green: 142 71% 45%;
+
+    /* Depth */
+    --shadow-sm: 0 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.05);
+    --shadow-md: 0 0 0 1px rgba(0,0,0,.05), 0 4px 6px -1px rgba(0,0,0,.06), 0 2px 4px -1px rgba(0,0,0,.04);
+    --shadow-lg: 0 0 0 1px rgba(0,0,0,.05), 0 10px 15px -3px rgba(0,0,0,.07), 0 4px 6px -2px rgba(0,0,0,.04);
+
+    /* Radii */
+    --radius-outer: 20px;
+    --radius-inner: 12px;
+
+    /* Sidebar (unused but required) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 243 75% 59%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 243 75% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 243 75% 65%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --nimpo-surface: 0 0% 8%;
+    --nimpo-surface-2: 0 0% 6%;
+    --nimpo-surface-3: 0 0% 12%;
+    --nimpo-ink: 0 0% 96%;
+    --nimpo-ink-2: 0 0% 75%;
+    --nimpo-ink-3: 0 0% 50%;
+    --nimpo-separator: 0 0% 14%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 75%;
+    --sidebar-primary: 243 75% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 243 75% 65%;
   }
 }
 
@@ -101,5 +119,45 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+  }
+
+  /* Mobile-first: max-width container centered */
+  #root {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100dvh;
+    position: relative;
+    background: hsl(var(--background));
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Tabular nums for counts */
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* Hide scrollbars but keep scroll */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer components {
+  .nimpo-card {
+    @apply bg-card rounded-[var(--radius-inner)] shadow-[var(--shadow-sm)];
+  }
+  .nimpo-input {
+    @apply bg-muted rounded-full px-4 py-3 text-sm w-full focus:outline-none transition-all;
+    box-shadow: 0 0 0 2px transparent;
+  }
+  .nimpo-input:focus {
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.25);
   }
 }
+
+/* Safe area support */
+.pb-safe { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.pt-safe { padding-top: max(1rem, env(safe-area-inset-top)); }
